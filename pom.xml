@@ -45,5 +45,10 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>jailer</groupId>
+			<artifactId>jailer-jdbc</artifactId>
+			<version>0.1.6</version>
+		</dependency>
 	</dependencies>
 </project>
