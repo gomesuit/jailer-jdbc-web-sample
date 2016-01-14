@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 @SpringBootApplication
 @MapperScan("jailer.jdbc.web.sample.mapper")
@@ -27,4 +28,10 @@ public class ApplicationStarter {
 		sqlSessionFactoryBean.setTypeAliasesPackage(TYPE_ALIASES_PACKAGE);
 		return sqlSessionFactoryBean.getObject();
 	}
+    
+    @Bean
+    @Autowired
+    public DataSourceTransactionManager transactionManager(DataSource dataSource) throws Exception {
+    	return new DataSourceTransactionManager(dataSource);
+    }
 }
